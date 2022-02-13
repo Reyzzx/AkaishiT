@@ -3,17 +3,17 @@ let cluster = require('cluster')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
-const CFonts = require('cfonts')
+const cfonts = require('cfonts')
 const Readline = require('readline')
 const yargs = require('yargs/yargs')
 const rl = Readline.createInterface(process.stdin, process.stdout)
 
-CFonts.say('Akaishi\nMulti-device', {
+cfonts.say('Akaishi\nMulti-device', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-CFonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
+cfonts.say(`'${package.name}' By @${package.author.name || package.author}`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
@@ -28,7 +28,7 @@ function start(file) {
   if (isRunning) return
   isRunning = true
   let args = [path.join(__dirname, file), ...process.argv.slice(2)]
-  CFonts.say([process.argv[0], ...args].join(' '), {
+  cfonts.say([process.argv[0], ...args].join(' '), {
     font: 'console',
     align: 'center',
     gradient: ['red', 'magenta']

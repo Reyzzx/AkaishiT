@@ -1,1 +1,1 @@
-web: node .
+web: npm i && node .
